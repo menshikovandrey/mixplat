@@ -16,8 +16,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-@import "../../node_modules/typeface-roboto/index.css";
-.subtitle {
-  font-family: Roboto, serif; /* fixme заменить на Roboto */
-}
+
 </style>

@@ -1,6 +1,6 @@
 <template>
-  <div class="logo">
-    <img alt="MIXPLAT Logo" id="logo" src="../assets/logo.png">
+  <div class="logoContainer">
+    <img alt="MIXPLAT Logo" id="logoImage" src="../assets/logo.png">
   </div>
 </template>
 
@@ -14,10 +14,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.logo {
+.logoContainer {
   text-align: center;
 }
-#logo {
+#logoImage {
   width: 102px;
   margin-top: 60px;
 }

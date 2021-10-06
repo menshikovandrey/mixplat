@@ -1,6 +1,6 @@
 <template>
   <div class="logoContainer">
-    <img alt="MIXPLAT Logo" id="logoImage" src="../assets/logo.png">
+    <img alt="MIXPLAT Logo" id="logoImage" src="../assets/img/logo.png">
   </div>
 </template>
 

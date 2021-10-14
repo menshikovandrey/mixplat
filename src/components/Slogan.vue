@@ -1,0 +1,41 @@
+<template>
+  <div class="sloganContainer">
+    <h2>Управление подписками</h2>
+    <div class="slogan">Настройте ваши ежемесячные платежи, оформленные через платёжный сервис MIXPLAT.<br>
+      На этой странице вы можете управлять своими подписками — изменить сумму дальнейших регулярных пожертвований или
+      отменить их.
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'Slogan'
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+h2 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 22px;
+  color: #333333;
+  margin: 60px 0px 0px 0px;
+  text-align: center;
+}
+
+.slogan {
+  width: 609px;
+  margin: auto;
+  margin-top: 10px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 18px;
+  text-align: center;
+  color: #999999;
+}
+</style>

@@ -1,19 +1,20 @@
 <template>
   <div id="app">
     <Logo/>
+    <Slogan/>
     <Card/>
   </div>
 </template>
 
 <script>
-import Logo from './components/Logo'
-import Card from './components/Card'
+import Logo from '@/components/Logo'
+import Slogan from "@/components/Slogan";
+import Card from '@/components/Card'
 
 export default {
   name: 'App',
   components: {
-    Logo,
-    Card,
+    Logo, Slogan, Card,
   }
 }
 </script>

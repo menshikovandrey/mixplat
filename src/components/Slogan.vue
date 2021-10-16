@@ -1,5 +1,6 @@
 <template>
-  <div class="sloganContainer">
+  <div>
+    <img alt="MIXPLAT" id="logo" src="@/assets/images/logo.png"> <!-- логотип -->
     <h2>Управление подписками</h2>
     <div class="slogan">Настройте ваши ежемесячные платежи, оформленные через платёжный сервис MIXPLAT.<br>
       На этой странице вы можете управлять своими подписками — изменить сумму дальнейших регулярных пожертвований или
@@ -16,6 +17,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+#logo {
+  width: 102px;
+  margin-top: 60px;
+}
+
 h2 {
   font-family: 'Roboto', sans-serif;
   font-weight: bold;

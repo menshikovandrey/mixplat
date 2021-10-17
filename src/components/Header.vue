@@ -2,7 +2,7 @@
   <div>
     <img alt="MIXPLAT" id="logo" src="@/assets/images/logo.png"> <!-- логотип -->
     <h2>Управление подписками</h2>
-    <div class="slogan">Настройте ваши ежемесячные платежи, оформленные через платёжный сервис MIXPLAT.<br>
+    <div class="info">Настройте ваши ежемесячные платежи, оформленные через платёжный сервис MIXPLAT.<br>
       На этой странице вы можете управлять своими подписками — изменить сумму дальнейших регулярных пожертвований или
       отменить их.
     </div>
@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: 'Slogan'
+  name: 'Header'
 }
 </script>
 
@@ -32,7 +32,7 @@ h2 {
   text-align: center;
 }
 
-.slogan {
+.info {
   width: 609px;
   margin: auto;
   margin-top: 10px;

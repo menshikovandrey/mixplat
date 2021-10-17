@@ -1,19 +1,22 @@
 <template>
   <div id="app">
-    <Slogan/>
+    <Header/>
     <Card/>
+    <Footer/>
   </div>
 </template>
 
 <script>
-import Slogan from "./components/Slogan";
+import Header from "./components/Header";
 import Card from './components/Card';
+import Footer from "./components/Footer";
 
 export default {
   name: 'App',
   components: {
-    Slogan,
+    Header,
     Card,
+    Footer,
   }
 }
 </script>
@@ -30,5 +33,7 @@ html {
 
 #app {
   text-align: center;
+  overflow: scroll;
 }
+
 </style>

@@ -9,7 +9,7 @@
               <div class="form-group row">
                 <label class="col-lg-3 col-form-label">Способ оплаты</label>
                 <div class="col-lg-9">
-                  <select id="method" name="select" class="custom-select">
+                  <select id="method" name="method" class="custom-select">
                     <option value="card">Банковская карта</option>
                     <option value="mobile">С баланса мобильного</option>
                     <option value="apple">Apple Pay</option>
@@ -20,12 +20,18 @@
               <div class="form-group row">
                 <label class="col-lg-3 col-form-label">Номер карты</label>
                 <div class="col-lg-4">
-                  <input type="text" class="form-control">
+                  <input
+                      type="text"
+                      v-mask="'9999 99'"
+                      class="form-control">
                   <div class="sublabel">Первые 6 цифр</div>
                 </div>
                 <div class="col-lg-1"></div>
                 <div class="col-lg-4">
-                  <input type="text" class="form-control">
+                  <input
+                      type="text"
+                      v-mask="'9999'"
+                      class="form-control">
                   <div class="sublabel">Последние 4 цифры</div>
                 </div>
               </div>
@@ -33,14 +39,20 @@
               <div class="form-group row">
                 <label class="col-lg-3 col-form-label">Месяц/год</label>
                 <div class="col-lg-4">
-                  <input type="text" class="form-control">
+                  <input
+                      type="text"
+                      v-mask="'99/99'"
+                      class="form-control">
                 </div>
               </div>
 
               <div class="form-group row">
                 <label class="col-lg-3 col-form-label">Сумма</label>
                 <div class="col-lg-9">
-                  <input type="text" class="form-control">
+                  <input
+                      type="text"
+                      v-mask="'9{1,}.|,99'"
+                      class="form-control">
                 </div>
               </div>
 

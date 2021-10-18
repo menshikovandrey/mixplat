@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'Header'
+  name: 'Footer'
 }
 </script>
 
@@ -14,7 +14,6 @@ export default {
 <style scoped>
 
 .copyright {
-  align-items: flex-end;
   text-align: center;
   font-family: Open Sans;
   font-style: normal;
@@ -22,5 +21,8 @@ export default {
   font-size: 13px;
   line-height: 18px;
   color: #999999;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  bottom: 0;
 }
 </style>

@@ -1,31 +1,13 @@
 <template>
   <div>
-    <div id="card" class="row">
+    <div id="mobile" class="row">
       <div class="col-lg-4 mx-auto">
 
         <div class="form-group row">
-          <label class="col-lg-4 col-form-label">Номер карты</label>
-          <div class="col-lg-4">
+          <label class="col-lg-4 col-form-label">Номер телефона</label>
+          <div class="col-lg-8">
             <input
-                v-mask="'9999 99'"
-                type="text"
-                class="form-control">
-            <div class="sublabel">Первые 6 цифр</div>
-          </div>
-          <div class="col-lg-4">
-            <input
-                v-mask="'9999'"
-                type="text"
-                class="form-control">
-            <div class="sublabel">Последние 4 цифры</div>
-          </div>
-        </div>
-
-        <div class="form-group row">
-          <label class="col-lg-4 col-form-label">Месяц/год</label>
-          <div class="col-lg-4">
-            <input
-                v-mask="'99/99'"
+                v-mask="'+7 (999) 999-99-99'"
                 type="text"
                 class="form-control">
           </div>
@@ -52,14 +34,14 @@
 
 <script>
 export default {
-  name: 'Card'
+  name: 'Mobile'
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#card {
-  display: flex;
+#mobile {
+  display: none;
 }
 
 .col-form-label,
@@ -70,16 +52,6 @@ export default {
   font-weight: normal;
   font-size: 13px;
   color: #333333;
-}
-
-.sublabel {
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 11px;
-  line-height: 15px;
-  display: flex;
-  color: #999999;
 }
 
 .btn {

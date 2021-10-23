@@ -1,41 +1,39 @@
 <template>
   <div>
 
-    <form action="#">
+    <div id="mobile" class="row">
 
-      <div id="mobile" class="row">
+      <div class="col-lg-4 mx-auto">
 
-        <div class="col-lg-4 mx-auto">
-
-          <div class="form-group row">
-            <label class="col-lg-4 col-form-label">Номер телефона</label>
-            <div class="col-lg-8">
-              <input
-                  v-mask="'+7 (999) 999-99-99'"
-                  type="text"
-                  class="form-control">
-            </div>
+        <div class="form-group row">
+          <label class="col-lg-4 col-form-label">Номер телефона</label>
+          <div class="col-lg-8">
+            <input
+                v-mask="'+7 (999) 999-99-99'"
+                type="text"
+                class="form-control"
+                placeholder="+7 (___) ___-__-__">
           </div>
+        </div>
 
-          <div class="form-group row">
-            <label class="col-lg-4 col-form-label">Сумма</label>
-            <div class="col-lg-8">
-              <input
-                  v-mask="'9{1,}.|,99'"
-                  type="text"
-                  class="form-control">
-            </div>
+        <div class="form-group row">
+          <label class="col-lg-4 col-form-label">Сумма</label>
+          <div class="col-lg-8">
+            <input
+                v-mask="'9{1,}.|,99'"
+                type="text"
+                class="form-control"
+                placeholder="000.00">
           </div>
+        </div>
 
-          <div class="text-right">
-            <button type="submit" class="btn btn-primary">Найти подписки</button>
-          </div>
-
+        <div class="text-right">
+          <button type="submit" class="btn btn-primary">Найти подписки</button>
         </div>
 
       </div>
 
-    </form>
+    </div>
 
   </div>
 </template>

@@ -1,66 +1,76 @@
 <template>
   <div>
 
-    <form action="#">
+    <div id="card" class="row">
 
-      <div id="card" class="row">
+      <div class="col-lg-4 mx-auto">
 
-        <div class="col-lg-4 mx-auto">
-
-          <div class="form-group row">
-            <label class="col-lg-4 col-form-label">Номер карты</label>
-            <div class="col-lg-4">
-              <input
-                  v-mask="'9999 99'"
-                  type="text"
-                  class="form-control">
-              <div class="sublabel">Первые 6 цифр</div>
-            </div>
-            <div class="col-lg-4">
-              <input
-                  v-mask="'9999'"
-                  type="text"
-                  class="form-control">
-              <div class="sublabel">Последние 4 цифры</div>
-            </div>
+        <div class="form-group row">
+          <label class="col-lg-4 col-form-label">Номер карты</label>
+          <div class="col-lg-4">
+            <input
+                v-mask="'9999 99'"
+                type="text"
+                class="form-control"
+                placeholder="0000 00">
+            <div class="sublabel">Первые 6 цифр</div>
           </div>
-
-          <div class="form-group row">
-            <label class="col-lg-4 col-form-label">Месяц/год</label>
-            <div class="col-lg-4">
-              <input
-                  v-mask="'99/99'"
-                  type="text"
-                  class="form-control">
-            </div>
+          <div class="col-lg-4">
+            <input
+                v-mask="'9999'"
+                type="text"
+                class="form-control"
+                placeholder="0000">
+            <div class="sublabel">Последние 4 цифры</div>
           </div>
+        </div>
 
-          <div class="form-group row">
-            <label class="col-lg-4 col-form-label">Сумма</label>
-            <div class="col-lg-8">
-              <input
-                  v-mask="'9{1,}.|,99'"
-                  type="text"
-                  class="form-control">
-            </div>
+        <div class="form-group row">
+          <label class="col-lg-4 col-form-label">Месяц/год</label>
+          <div class="col-lg-4">
+            <input
+                v-mask="'99/99'"
+                type="text"
+                class="form-control"
+                placeholder="ММ/ГГ">
           </div>
+        </div>
 
-          <div class="text-right">
-            <button type="submit" class="btn btn-primary">Найти подписки</button>
+        <div class="form-group row">
+          <label class="col-lg-4 col-form-label">Сумма</label>
+          <div class="col-lg-8">
+            <input
+                v-mask="'9{1,}.|,99'"
+                type="text"
+                class="form-control"
+                placeholder="000.00">
           </div>
+        </div>
 
+        <div class="text-right">
+          <button v-on:click="onBtnCardClick()"
+                  id="btnCard"
+                  type="submit"
+                  class="btn btn-primary">
+            Найти подписки
+          </button>
         </div>
 
       </div>
 
-    </form>
+    </div>
 
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Card'
+  name: 'Card',
+  methods: {
+    onBtnCardClick() {
+      document.getElementById('subscriptions').style.display = "flex";  // открыть Подписки
+    },
+  }
 }
 </script>
 

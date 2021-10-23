@@ -21,11 +21,13 @@
       </div>
     </div>
 
-    <Card/>   <!-- Банковская карта -->
-    <Mobile/> <!-- С баланса мобильного -->
-    <Apple/>  <!-- Apple Pay -->
+    <Card/>           <!-- Банковская карта -->
+    <Mobile/>         <!-- С баланса мобильного -->
+    <Apple/>          <!-- Apple Pay -->
 
-    <Footer/> <!-- Copyright снизу -->
+    <Subscriptions/>  <!-- Подписки -->
+
+    <Footer/>         <!-- Copyright снизу -->
   </div>
 </template>
 
@@ -34,11 +36,12 @@ import Header from "./components/Header";
 import Card from './components/Card';
 import Mobile from "./components/Mobile";
 import Apple from "./components/Apple";
+import Subscriptions from "./components/Subscriptions";
 import Footer from "./components/Footer";
 
 export default {
   name: 'App',
-  components: {Header, Card, Mobile, Apple, Footer},
+  components: {Header, Card, Mobile, Apple, Subscriptions, Footer},
   data() {
     return {
       selected: 'card', // Выпадающий список - значение по умолчанию
@@ -51,11 +54,20 @@ export default {
   },
   methods: {
     /**
+     * Скрыть и обнулить все компоненты и поля
+     */
+    eraseAllData() {
+      document.getElementById('card').style.display = "none";           // скрыть Карта
+      document.getElementById('mobile').style.display = "none";         // скрыть Мобильный
+      document.getElementById('apple').style.display = "none";          // скрыть Apple
+      document.getElementById('subscriptions').style.display = "none";  // скрыть Подписки
+    },
+    /**
      * Выполняется при изменеии значения в выпадабщем списке
      */
     onChange() {
       let selected = this.selected; // получаем способ оплаты
-      this.hideScreens();           // скрыть все способы оплаты
+      this.eraseAllData();       // скрыть и обнулить все компоненты и поля
       switch (selected) {           // отобразить выбранный из выпадающего списка
         case 'card':
           document.getElementById('card').style.display = "flex";
@@ -68,21 +80,14 @@ export default {
           break;
       }
     },
-    /**
-     * Скрыть все способы оплаты
-     */
-    hideScreens() {
-      document.getElementById('card').style.display = "none";
-      document.getElementById('mobile').style.display = "none";
-      document.getElementById('apple').style.display = "none";
-    }
   }
 }
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=');*/
+/*@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Roboto:wght@100;300;400&display=swap');
 @import './assets/icons/icomoon/styles.min.css';
 @import './assets/css/all.min.css';
 

@@ -1,34 +1,42 @@
 <template>
   <div>
-    <div id="mobile" class="row">
-      <div class="col-lg-4 mx-auto">
 
-        <div class="form-group row">
-          <label class="col-lg-4 col-form-label">Номер телефона</label>
-          <div class="col-lg-8">
-            <input
-                v-mask="'+7 (999) 999-99-99'"
-                type="text"
-                class="form-control">
+    <form action="#">
+
+      <div id="mobile" class="row">
+
+        <div class="col-lg-4 mx-auto">
+
+          <div class="form-group row">
+            <label class="col-lg-4 col-form-label">Номер телефона</label>
+            <div class="col-lg-8">
+              <input
+                  v-mask="'+7 (999) 999-99-99'"
+                  type="text"
+                  class="form-control">
+            </div>
           </div>
-        </div>
 
-        <div class="form-group row">
-          <label class="col-lg-4 col-form-label">Сумма</label>
-          <div class="col-lg-8">
-            <input
-                v-mask="'9{1,}.|,99'"
-                type="text"
-                class="form-control">
+          <div class="form-group row">
+            <label class="col-lg-4 col-form-label">Сумма</label>
+            <div class="col-lg-8">
+              <input
+                  v-mask="'9{1,}.|,99'"
+                  type="text"
+                  class="form-control">
+            </div>
           </div>
-        </div>
 
-        <div class="text-right">
-          <button type="submit" class="btn btn-primary">Найти подписки</button>
+          <div class="text-right">
+            <button type="submit" class="btn btn-primary">Найти подписки</button>
+          </div>
+
         </div>
 
       </div>
-    </div>
+
+    </form>
+
   </div>
 </template>
 

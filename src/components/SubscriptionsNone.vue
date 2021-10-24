@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="subscriptionsNone" class="row">
+    <div id="subscriptions_none" class="row">
       <div class="col-lg-6 mx-auto">
         <div class="error">Подписки не найдены. Проверьте данные и попробуйте еще раз</div>
       </div>
@@ -15,7 +15,7 @@ export default {
 </script>
 
 <style scoped>
-#subscriptionsNone {
+#subscriptions_none {
   display: none;
   margin-top: 30px;
 }

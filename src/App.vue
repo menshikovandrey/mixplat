@@ -9,10 +9,14 @@
         <div class="form-group row">
           <label class="col-lg-4 col-form-label">Способ оплаты</label>
           <div class="col-lg-8">
-            <select v-model="selected"
-                    @change="onChange()"
-                    class="custom-select form-control">
-              <option v-for="option in this.selectOptions" v-bind:key="option.value" v-bind:value="option.value">
+            <select
+                v-model="selected"
+                @change="onChange()"
+                class="custom-select form-control">
+              <option
+                  v-for="option in this.selectOptions"
+                  v-bind:key="option.value"
+                  v-bind:value="option.value">
                 {{ option.text }}
               </option>
             </select>
@@ -55,18 +59,28 @@ export default {
         {value: 'apple', text: 'Apple Pay'},
       ],
       subscriptions: null,
-      api: 'https://jsonplaceholder.typicode.com/posts/',
+      apiSubscriptions: 'https://my-json-server.typicode.com/menshikovandrey/mixplat/subscriptions/',            // ручка подписки
+      apiSubscriptionsNone: 'https://my-json-server.typicode.com/menshikovandrey/mixplat/subscriptions_none/',  // ручка пустой массив
     }
   },
   methods: {
     /**
-     * Скрыть и обнулить все компоненты и поля
+     * Скрыть компоненты и обнулить поля
      */
     eraseAllData() {
       document.getElementById('card').style.display = "none";           // скрыть Карта
       document.getElementById('mobile').style.display = "none";         // скрыть Мобильный
       document.getElementById('apple').style.display = "none";          // скрыть Apple
       document.getElementById('subscriptions').style.display = "none";  // скрыть Подписки
+      document.getElementById('subscriptions_none').style.display = "none";  // скрыть Подписки (не найдены)
+      document.getElementById('card_num_6').value = "";
+      document.getElementById('card_num_4').value = "";
+      document.getElementById('card_date').value = "";
+      document.getElementById('card_sum').value = "";
+      document.getElementById('mobile_tel').value = "";
+      document.getElementById('mobile_sum').value = "";
+      document.getElementById('apple_num_4').value = "";
+      document.getElementById('apple_sum').value = "";
     },
     /**
      * Выполняется при изменеии значения в выпадабщем списке
@@ -87,15 +101,28 @@ export default {
       }
     },
     /**
-     * Найти подписки
+     * Найти подписки (успех)
      */
     getSubscriptions() {
-      axios.get(this.endpoint)
+      axios.get(this.apiSubscriptions)
           .then(response => {
-            this.posts = response.data;
+            let subscriptions = response.data;
+            console.log(subscriptions);
           })
           .catch(error => {
-            console.log('-----error-------');
+            console.log(error);
+          })
+    },
+    /**
+     * Подписки не найдены
+     */
+    getSubscriptionsNone() {
+      axios.get(this.apiSubscriptionsNone)
+          .then(response => {
+            let subscriptions = response.data;
+            console.log(subscriptions);
+          })
+          .catch(error => {
             console.log(error);
           })
     }

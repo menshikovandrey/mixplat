@@ -9,6 +9,7 @@
           <label class="col-lg-4 col-form-label">Номер карты</label>
           <div class="col-lg-4">
             <input
+                id="apple_num_4"
                 v-mask="'9999'"
                 type="text"
                 class="form-control"
@@ -21,6 +22,7 @@
           <label class="col-lg-4 col-form-label">Сумма</label>
           <div class="col-lg-8">
             <input
+                id="apple_sum"
                 v-mask="'9{1,}.|,99'"
                 type="text"
                 class="form-control"
@@ -29,7 +31,13 @@
         </div>
 
         <div class="text-right">
-          <button type="submit" class="btn btn-primary">Найти подписки</button>
+          <button
+              v-on:click="onBtnClick()"
+              id="btnCard"
+              type="submit"
+              class="btn btn-primary">
+            Найти подписки
+          </button>
         </div>
 
       </div>
@@ -41,7 +49,12 @@
 
 <script>
 export default {
-  name: 'Apple'
+  name: 'Apple',
+  methods: {
+    onBtnClick() {
+      document.getElementById('subscriptions_none').style.display = "flex";  // открыть Подписки
+    },
+  }
 }
 </script>
 

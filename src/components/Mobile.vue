@@ -9,6 +9,7 @@
           <label class="col-lg-4 col-form-label">Номер телефона</label>
           <div class="col-lg-8">
             <input
+                id="mobile_tel"
                 v-mask="'+7 (999) 999-99-99'"
                 type="text"
                 class="form-control"
@@ -20,6 +21,7 @@
           <label class="col-lg-4 col-form-label">Сумма</label>
           <div class="col-lg-8">
             <input
+                id="mobile_sum"
                 v-mask="'9{1,}.|,99'"
                 type="text"
                 class="form-control"
@@ -28,7 +30,13 @@
         </div>
 
         <div class="text-right">
-          <button type="submit" class="btn btn-primary">Найти подписки</button>
+          <button
+              v-on:click="onBtnClick()"
+              id="btnCard"
+              type="submit"
+              class="btn btn-primary">
+            Найти подписки
+          </button>
         </div>
 
       </div>
@@ -40,7 +48,12 @@
 
 <script>
 export default {
-  name: 'Mobile'
+  name: 'Mobile',
+  methods: {
+    onBtnClick() {
+      document.getElementById('subscriptions_none').style.display = "flex";  // открыть Подписки
+    },
+  }
 }
 </script>
 

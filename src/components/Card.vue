@@ -9,6 +9,7 @@
           <label class="col-lg-4 col-form-label">Номер карты</label>
           <div class="col-lg-4">
             <input
+                id="card_num_6"
                 v-mask="'9999 99'"
                 type="text"
                 class="form-control"
@@ -17,6 +18,7 @@
           </div>
           <div class="col-lg-4">
             <input
+                id="card_num_4"
                 v-mask="'9999'"
                 type="text"
                 class="form-control"
@@ -29,6 +31,7 @@
           <label class="col-lg-4 col-form-label">Месяц/год</label>
           <div class="col-lg-4">
             <input
+                id="card_date"
                 v-mask="'99/99'"
                 type="text"
                 class="form-control"
@@ -40,6 +43,7 @@
           <label class="col-lg-4 col-form-label">Сумма</label>
           <div class="col-lg-8">
             <input
+                id="card_sum"
                 v-mask="'9{1,}.|,99'"
                 type="text"
                 class="form-control"

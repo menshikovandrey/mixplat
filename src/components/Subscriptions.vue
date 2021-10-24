@@ -1,6 +1,38 @@
 <template>
   <div>
 
+    <b-modal
+        size="sm"
+        id="modal_edit"
+        centered
+        title="Настройка подписки">
+      <div class="d-block text-center">
+        <div class="form-group row">
+          <label class="col-lg-4 col-form-label">Сумма</label>
+          <div class="col-lg-8">
+            <input
+                id="modal_edit_sum"
+                v-mask="'9{1,}.|,99'"
+                type="text"
+                class="form-control"
+                placeholder="000.00">
+          </div>
+        </div>
+      </div>
+    </b-modal>
+
+    <b-modal
+        size="sm"
+        id="modal_delete"
+        centered
+        title="Отмена подписки">
+      <div class="d-block">
+        Подписка будет отменена. Вы уверены?
+      </div>
+    </b-modal>
+
+    <div id="modal_confirm"></div>
+
     <div id="subscriptions" class="row">
 
       <div class="card col-lg-6 mx-auto">
@@ -24,8 +56,16 @@
               <td>*9666</td>
               <td>200</td>
               <td class="icons_subscriptions">
-                <img src="@/assets/images/icon_edit.png" alt="Настроить подписку" class="icon_edit">
-                <button type="button" class="btn shadow-0 text-danger delete-cross btn-icon">
+                <button
+                    @click="$bvModal.show('modal_edit')"
+                    type="button"
+                    class="btn shadow-0 delete-cross btn-icon">
+                  <i class="icon-cog" title="Настроить подписку"></i>
+                </button>
+                <button
+                    @click="$bvModal.show('modal_delete')"
+                    type="button"
+                    class="btn shadow-0 text-danger delete-cross btn-icon">
                   <i class="icon-cross2" title="Отменить подписку"></i>
                 </button>
               </td>
@@ -43,7 +83,8 @@
 
 <script>
 export default {
-  name: 'Subscriptions'
+  name: 'Subscriptions',
+  methods: {}
 }
 </script>
 
@@ -59,11 +100,6 @@ export default {
   padding-left: 0 !important;
 }
 
-/*table.table-subscriptions thead tr td,
-table.table-subscriptions tbody tr td {
-  width: 33% !important;
-}*/
-
 h5.card-title {
   font-family: 'Roboto', sans-serif;
   font-style: normal;
@@ -74,10 +110,6 @@ h5.card-title {
 
 .table-header {
   background: #FAFAFA !important;
-}
-
-.icon_edit {
-  margin-left: 20px;
 }
 
 .icons_subscriptions {

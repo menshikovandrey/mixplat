@@ -21,19 +21,13 @@
             </thead>
             <tbody>
             <tr>
-              <td>*7777</td>
-              <td>575</td>
-              <td class="icons_subscriptions">
-                <img src="../assets/images/icon_edit.png" alt="Настроить подписку" class="icon_edit">
-                <img src="../assets/images/icon_delete.png" alt="Отменить подписку" class="icon_delete">
-              </td>
-            </tr>
-            <tr>
               <td>*9666</td>
               <td>200</td>
               <td class="icons_subscriptions">
-                <img src="../assets/images/icon_edit.png" alt="Настроить подписку" class="icon_edit">
-                <img src="../assets/images/icon_delete.png" alt="Отменить подписку" class="icon_delete">
+                <img src="@/assets/images/icon_edit.png" alt="Настроить подписку" class="icon_edit">
+                <button type="button" class="btn shadow-0 text-danger delete-cross btn-icon">
+                  <i class="icon-cross2" title="Отменить подписку"></i>
+                </button>
               </td>
             </tr>
             </tbody>
@@ -53,7 +47,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #subscriptions {
   display: none;
@@ -83,8 +76,7 @@ h5.card-title {
   background: #FAFAFA !important;
 }
 
-.icon_edit,
-.icon_delete {
+.icon_edit {
   margin-left: 20px;
 }
 

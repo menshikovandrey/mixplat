@@ -48,10 +48,11 @@
         </div>
 
         <div class="text-right">
-          <button v-on:click="onBtnCardClick()"
-                  id="btnCard"
-                  type="submit"
-                  class="btn btn-primary">
+          <button
+              v-on:click="onBtnClick()"
+              id="btnCard"
+              type="submit"
+              class="btn btn-primary">
             Найти подписки
           </button>
         </div>
@@ -67,14 +68,13 @@
 export default {
   name: 'Card',
   methods: {
-    onBtnCardClick() {
+    onBtnClick() {
       document.getElementById('subscriptions').style.display = "flex";  // открыть Подписки
     },
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #card {
   display: flex;

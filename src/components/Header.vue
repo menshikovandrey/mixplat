@@ -2,9 +2,11 @@
   <div>
     <img alt="MIXPLAT" id="logo" src="@/assets/images/logo.png"> <!-- логотип -->
     <h2>Управление подписками</h2>
-    <div class="info">Настройте ваши ежемесячные платежи, оформленные через платёжный сервис MIXPLAT.<br>
-      На этой странице вы можете управлять своими подписками — изменить сумму дальнейших регулярных пожертвований или
-      отменить их.
+    <div class="col-lg-6 mx-auto">
+      <div class="info">Настройте ваши ежемесячные платежи, оформленные через платёжный сервис MIXPLAT.<br>
+        На этой странице вы можете управлять своими подписками — изменить сумму дальнейших регулярных пожертвований или
+        отменить их.
+      </div>
     </div>
   </div>
 </template>
@@ -15,7 +17,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #logo {
   width: 102px;
@@ -33,7 +34,7 @@ h2 {
 }
 
 .info {
-  width: 609px;
+  /*width: 609px;*/
   margin: auto;
   margin-top: 10px;
   font-family: Open Sans;

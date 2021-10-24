@@ -21,13 +21,14 @@
       </div>
     </div>
 
-    <Card/>           <!-- Банковская карта -->
-    <Mobile/>         <!-- С баланса мобильного -->
-    <Apple/>          <!-- Apple Pay -->
+    <Card/>               <!-- Банковская карта -->
+    <Mobile/>             <!-- С баланса мобильного -->
+    <Apple/>              <!-- Apple Pay -->
 
-    <Subscriptions/>  <!-- Подписки -->
+    <Subscriptions/>      <!-- Подписки -->
+    <SubscriptionsNone/>  <!-- Подписки не найдены -->
 
-    <Footer/>         <!-- Copyright снизу -->
+    <Footer/>             <!-- Copyright снизу -->
   </div>
 </template>
 
@@ -37,11 +38,14 @@ import Card from './components/Card';
 import Mobile from "./components/Mobile";
 import Apple from "./components/Apple";
 import Subscriptions from "./components/Subscriptions";
+import SubscriptionsNone from "./components/SubscriptionsNone";
 import Footer from "./components/Footer";
+
+import axios from "axios";
 
 export default {
   name: 'App',
-  components: {Header, Card, Mobile, Apple, Subscriptions, Footer},
+  components: {Header, Card, Mobile, Apple, Subscriptions, SubscriptionsNone, Footer},
   data() {
     return {
       selected: 'card', // Выпадающий список - значение по умолчанию
@@ -50,6 +54,8 @@ export default {
         {value: 'mobile', text: 'С баланса мобильного'},
         {value: 'apple', text: 'Apple Pay'},
       ],
+      subscriptions: null,
+      api: 'https://jsonplaceholder.typicode.com/posts/',
     }
   },
   methods: {
@@ -67,7 +73,7 @@ export default {
      */
     onChange() {
       let selected = this.selected; // получаем способ оплаты
-      this.eraseAllData();       // скрыть и обнулить все компоненты и поля
+      this.eraseAllData();          // скрыть и обнулить все компоненты и поля
       switch (selected) {           // отобразить выбранный из выпадающего списка
         case 'card':
           document.getElementById('card').style.display = "flex";
@@ -80,13 +86,24 @@ export default {
           break;
       }
     },
+    /**
+     * Найти подписки
+     */
+    getSubscriptions() {
+      axios.get(this.endpoint)
+          .then(response => {
+            this.posts = response.data;
+          })
+          .catch(error => {
+            console.log('-----error-------');
+            console.log(error);
+          })
+    }
   }
 }
 </script>
 
 <style>
-/*@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=');*/
-/*@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');*/
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Roboto:wght@100;300;400&display=swap');
 @import './assets/icons/icomoon/styles.min.css';
 @import './assets/css/all.min.css';

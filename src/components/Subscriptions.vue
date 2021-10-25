@@ -4,8 +4,10 @@
     <b-modal
         size="sm"
         id="modal_edit"
-        centered
-        title="Настройка подписки">
+        centered>
+      <template #modal-title>
+        Настройка подписки
+      </template>
       <div class="d-block text-center">
         <div class="form-group row">
           <label class="col-lg-4 col-form-label">Сумма</label>
@@ -19,6 +21,15 @@
           </div>
         </div>
       </div>
+      <template #modal-footer>
+        <button type="button" class="btn btn-primary">Подтвердить</button>
+        <button
+            @click="$bvModal.hide('modal_edit')"
+            type="button"
+            class="btn btn-light">
+          Отменить
+        </button>
+      </template>
     </b-modal>
 
     <b-modal
@@ -29,6 +40,20 @@
       <div class="d-block">
         Подписка будет отменена. Вы уверены?
       </div>
+      <template #modal-footer>
+        <button
+            @click="modal_confirm()"
+            type="button"
+            class="btn btn-primary">
+          Подтвердить
+        </button>
+        <button
+            @click="$bvModal.hide('modal_delete')"
+            type="button"
+            class="btn btn-light">
+          Отменить
+        </button>
+      </template>
     </b-modal>
 
     <b-modal
@@ -50,9 +75,18 @@
           </div>
         </div>
       </div>
+      <template #modal-footer>
+        <button type="button" class="btn btn-primary">Подтвердить</button>
+        <button
+            @click="$bvModal.hide('modal_confirm')"
+            type="button"
+            class="btn btn-light">
+          Отменить
+        </button>
+      </template>
     </b-modal>
 
-    <div id="subscriptions" class="row">
+    <div id="subscriptions" class="row screen">
 
       <div class="card col-lg-6 mx-auto">
 
@@ -78,7 +112,7 @@
                 <button
                     @click="$bvModal.show('modal_edit')"
                     type="button"
-                    class="btn shadow-0 delete-cross btn-icon">
+                    class="btn shadow-0 btn-icon">
                   <i class="icon-cog" title="Настроить подписку"></i>
                 </button>
                 <button
@@ -103,7 +137,12 @@
 <script>
 export default {
   name: 'Subscriptions',
-  methods: {}
+  methods: {
+    modal_confirm() {
+      this.$bvModal.hide('modal_delete')
+      this.$bvModal.show('modal_confirm');
+    }
+  }
 }
 </script>
 
@@ -133,5 +172,11 @@ h5.card-title {
 
 .icons_subscriptions {
   text-align: right !important;
+}
+
+.btn {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
 }
 </style>

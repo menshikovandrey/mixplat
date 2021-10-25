@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="subscriptions_none" class="row">
+    <div id="subscriptions_none" class="row screen">
       <div class="col-lg-6 mx-auto">
         <div class="error">Подписки не найдены. Проверьте данные и попробуйте еще раз</div>
       </div>

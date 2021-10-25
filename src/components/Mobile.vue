@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <div id="mobile" class="row">
+    <div id="mobile" class="row screen">
 
       <div class="col-lg-4 mx-auto">
 

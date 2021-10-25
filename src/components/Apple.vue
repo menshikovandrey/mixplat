@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <div id="apple" class="row">
+    <div id="apple" class="row screen">
 
       <div class="col-lg-4 mx-auto">
 

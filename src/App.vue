@@ -68,19 +68,21 @@ export default {
      * Скрыть компоненты и обнулить поля
      */
     eraseAllData() {
-      document.getElementById('card').style.display = "none";           // скрыть Карта
-      document.getElementById('mobile').style.display = "none";         // скрыть Мобильный
-      document.getElementById('apple').style.display = "none";          // скрыть Apple
-      document.getElementById('subscriptions').style.display = "none";  // скрыть Подписки
-      document.getElementById('subscriptions_none').style.display = "none";  // скрыть Подписки (не найдены)
-      document.getElementById('card_num_6').value = "";
-      document.getElementById('card_num_4').value = "";
-      document.getElementById('card_date').value = "";
-      document.getElementById('card_sum').value = "";
-      document.getElementById('mobile_tel').value = "";
-      document.getElementById('mobile_sum').value = "";
-      document.getElementById('apple_num_4').value = "";
-      document.getElementById('apple_sum').value = "";
+      /*
+      Скрываем все экраны по умолчанию
+       */
+      let screens = document.getElementsByClassName("screen");
+      console.log(screens)
+      for (let i = 0; i < screens.length; i++)
+        screens[i].style.display = "none";
+
+      /*
+      Задаем пустое значение для всех полей input
+       */
+      let fields = document.getElementsByTagName("input");
+      console.log(fields)
+      for (let j = 0; j < fields.length; j++)
+        fields[j].value = "";
     },
     /**
      * Выполняется при изменеии значения в выпадабщем списке

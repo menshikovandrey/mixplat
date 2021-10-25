@@ -31,7 +31,26 @@
       </div>
     </b-modal>
 
-    <div id="modal_confirm"></div>
+    <b-modal
+        size="sm"
+        id="modal_confirm"
+        centered
+        title="Код подтверждения">
+      <div class="d-block">
+        Мы отправили код подтверждения на email meo***2@gmail.com.
+        <div class="form-group row">
+          <label class="col-lg-4 col-form-label">Введите код</label>
+          <div class="col-lg-8">
+            <input
+                id="modal_confirm_code"
+                v-mask="'999999'"
+                type="text"
+                class="form-control"
+                placeholder="000000">
+          </div>
+        </div>
+      </div>
+    </b-modal>
 
     <div id="subscriptions" class="row">
 
